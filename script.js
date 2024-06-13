@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch('https://dm-contest.darkube.app/contest/leaderboard') // Replace with the actual API endpoint
             .then(response => response.json())
             .then(data => {
-                populateLeaderboard(data.slice(1,11));
+                populateLeaderboard(data.slice(0,10));
             })
             .catch(error => console.error('Error fetching leaderboard data:', error));
     };
