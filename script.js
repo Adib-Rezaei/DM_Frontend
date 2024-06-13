@@ -23,17 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
             nameCell.textContent = team.name;
             row.appendChild(nameCell);
 
-            const solvedCell = document.createElement('td');
-            solvedCell.textContent = team.main_solved;
-            row.appendChild(solvedCell);
-
-            const citySolved = document.createElement('td');
-            citySolved.textContent = team.city_solved;
-            row.appendChild(citySolved);
-
-            const riddleSolved = document.createElement('td');
-            riddleSolved.textContent = team.riddle_solved;
-            row.appendChild(riddleSolved);
+            // const solvedCell = document.createElement('td');
+            // solvedCell.textContent = team.main_solved;
+            // row.appendChild(solvedCell);
+            //
+            // const citySolved = document.createElement('td');
+            // citySolved.textContent = team.city_solved;
+            // row.appendChild(citySolved);
+            //
+            // const riddleSolved = document.createElement('td');
+            // riddleSolved.textContent = team.riddle_solved;
+            // row.appendChild(riddleSolved);
 
             const score = document.createElement('td');
             score.textContent = team.credit;
