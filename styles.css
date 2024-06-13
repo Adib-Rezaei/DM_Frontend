@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent body from scrolling */
+}
+
+.leaderboard-container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    height: 90vh; /* Set a maximum height for the container */
+    overflow: hidden; /* Hide overflow to prevent body scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+}
+
+.table-wrapper {
+    flex-grow: 1;
+    width: 100%;
+    overflow: auto; /* Enable scrolling within the table wrapper */
+}
+
+table.leaderboard {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table.leaderboard th,
+table.leaderboard td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table.leaderboard thead {
+    background-color: #333;
+    color: white;
+}
+
+table.leaderboard thead th {
+    padding: 10px;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #333; /* Set the background color */
+    background-clip: padding-box; /* Ensure background color covers the entire header cell */
+}
+
+table.leaderboard tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+table.leaderboard tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+/*table.leaderboard tbody tr:hover {*/
+/*    background-color: #f1f1f1;*/
+/*}*/
+
+table.leaderboard th:nth-child(1),
+table.leaderboard td:nth-child(1) {
+    width: 5%;
+}
+
+table.leaderboard th:nth-child(2),
+table.leaderboard td:nth-child(2) {
+    width: 20%;
+}
+
+table.leaderboard th:nth-child(3),
+table.leaderboard td:nth-child(3) {
+    width: 15%;
+}
+
+table.leaderboard th:nth-child(4),
+table.leaderboard td:nth-child(4) {
+    width: auto;
+}
+
+.problems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: visible;
+    padding: 5px;
+}
+
+.problem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    margin: 2px;
+    position: relative;
+}
+
+.problem-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+}
+
+.problem-submission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: black;
+    opacity: 0.7;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.correct {
+    background-color: #4CAF50;
+}
+
+.incorrect {
+    background-color: #f44336;
+}
+
+@media (max-width: 600px) {
+    table.leaderboard {
+        width: 100%;
+    }
+
+    table.leaderboard thead {
+        display: none;
+    }
+
+    table.leaderboard tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    table.leaderboard td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    table.leaderboard td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .problems {
+        justify-content: flex-start;
+    }
+
+    .problem {
+        margin: 2px 2px 2px 0;
+    }
+}
